@@ -11,12 +11,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-pip \
         tzdata \
         vim
-# Install Anaconda in silent mode
-RUN wget https://repo.anaconda.com/anaconda/anaconda3-latest-Linux-x86_64.sh \
-        -O ~/anaconda.sh && \
-        bash ~/anaconda.sh -b -p $HOME/anaconda && \
-        rm ~/anaconda.sh && \
-        echo "export PATH=$HOME/anaconda/bin:$PATH" >> ~/.bashrc
+# Install miniconda3 in silent mode
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+        -O ~/miniconda3.sh && \
+        bash ~/miniconda3.sh -b -p $HOME/miniconda3 && \
+        rm ~/miniconda3.sh && \
+        echo "export PATH=$HOME/miniconda3/bin:$PATH" >> ~/.bashrc
 # Set timezone
 RUN ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 # Set locale
